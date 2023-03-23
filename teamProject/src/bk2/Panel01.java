@@ -13,6 +13,7 @@ import javax.swing.JTextArea;
 
 import bk.BasKetTest;
 import shoping.Payment;
+import tp.Main;
 
 public class Panel01 extends JPanel{
 	private JButton Jbutton1;
@@ -57,7 +58,7 @@ public class Panel01 extends JPanel{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				bk.change(null);
+				bk.change("fm");
 				
 			}
 		});

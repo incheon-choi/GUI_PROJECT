@@ -40,7 +40,7 @@ public class Payment extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				pl.setVisible(false);
-				FirstMain f = new FirstMain();
+				FirstMain f = new FirstMain(null);
 
 			}
 
