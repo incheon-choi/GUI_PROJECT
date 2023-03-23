@@ -2,14 +2,17 @@ package bk2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import bk.BasKetTest;
+import shoping.Payment;
 
 public class Panel01 extends JPanel{
 	private JButton Jbutton1;
@@ -48,6 +51,8 @@ public class Panel01 extends JPanel{
 		
 		
 		
+		
+		//메뉴화면 전환 함수
 		Jbutton1.addActionListener(new ActionListener() {
 			
 			@Override
@@ -57,6 +62,7 @@ public class Panel01 extends JPanel{
 			}
 		});
 		
+		//초기화면 전환 함수
 		Jbutton2.addActionListener(new ActionListener() {
 			
 			@Override
@@ -66,14 +72,35 @@ public class Panel01 extends JPanel{
 			}
 		});
 		
+		
+		//결제 창함수
 		Jbutton3.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				bk.change(null);
-				
+				Random rnd = new Random();
+				int ro = rnd.nextInt(3) + 1;
+				if (ro == 2) {
+					JOptionPane.showMessageDialog(null, " 잔액이 부족합니다. \n카드의 잔액을 확인해 주세요");
+				} else {
+					JOptionPane.showMessageDialog(null, "결제가 완료되었습니다. \n이용해주셔서 감사합니다.");
+					// 초기화면 이동
+					
+					bk.setVisible(false);
+				}
 			}
-		});
+		});// 결제
+		
+//		Jbutton3.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				bk.change("Payment");
+//				
+//				
+//				
+//				
+//			}
+//		});
 		
 		
 	}
