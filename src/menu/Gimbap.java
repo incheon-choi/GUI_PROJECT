@@ -12,49 +12,49 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 public class Gimbap extends JPanel {
-	//gbtn = ê¹€ë°¥ë²„íŠ¼
-	//jl1 = ê¹€ë°¥ì´ë¦„
-	//jl1_1 = ê¹€ë°¥ê°€ê²©
-	//gmpsp = ê¹€ë°¥ë©”ë‰´ìŠ¤í¬ë¡¤
-	//gmp = ê¹€ë°¥ë©”ë‰´íŒ¨ë„
-	
-	//ë©”ë‰´ìŠ¤í¬ë¡¤
+	//gbtn = ±è¹ä¹öÆ°
+	//jl1 = ±è¹äÀÌ¸§
+	//jl1_1 = ±è¹ä°¡°İ
+	//gmpsp = ±è¹ä¸Ş´º½ºÅ©·Ñ
+	//gmp = ±è¹ä¸Ş´ºÆĞ³Î
+
+	//¸Ş´º½ºÅ©·Ñ
 	private JScrollPane gmpsp;
-	
-	//ë©”ë‰´í˜ë„
+
+	//¸Ş´ºÆä³Î
 	private JPanel gmp = new JPanel();
-	
-	//ì•¼ì±„ê¹€ë°¥ë²„íŠ¼ ìƒì„±
+
+	//¾ßÃ¤±è¹ä¹öÆ° »ı¼º
 	private JButton gbtn1;
 	private JLabel jl1;
 	private JLabel jl1_1;
-	
-	//ì°¸ì¹˜ê¹€ë°¥ë²„íŠ¼ ìƒì„±
+
+	//ÂüÄ¡±è¹ä¹öÆ° »ı¼º
 	private JButton gbtn2;
 	private JLabel jl2;
 	private JLabel jl2_1;
-	
-	//ì¹˜ì¦ˆê¹€ë°¥ë²„íŠ¼ ìƒì„±
+
+	//Ä¡Áî±è¹ä¹öÆ° »ı¼º
 	private JButton gbtn3;
 	private JLabel jl3;
 	private JLabel jl3_1;
-	
-	//ê¹€ì¹˜ê¹€ë°¥ë²„íŠ¼ ìƒì„±
+
+	//±èÄ¡±è¹ä¹öÆ° »ı¼º
 	private JButton gbtn4;
 	private JLabel jl4;
 	private JLabel jl4_1;
-	
-	//ë¶ˆê³ ê¸°ê¹€ë°¥ë²„íŠ¼ ìƒì„±
+
+	//ºÒ°í±â±è¹ä¹öÆ° »ı¼º
 	private JButton gbtn5;
 	private JLabel jl5;
 	private JLabel jl5_1;
-	
-	//ì™•ìƒˆìš°íŠ€ê¹€ê¹€ë°¥ë²„íŠ¼ ìƒì„±
+
+	//¿Õ»õ¿ìÆ¢±è±è¹ä¹öÆ° »ı¼º
 	private JButton gbtn6;
 	private JLabel jl6;
 	private JLabel jl6_1;
-	
-	//ê¹€ë°¥ë²„íŠ¼ì´ë¯¸ì§€
+
+	//±è¹ä¹öÆ°ÀÌ¹ÌÁö
 	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap1.PNG");
 	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap2.PNG");
 	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap3.PNG");
@@ -63,108 +63,108 @@ public class Gimbap extends JPanel {
 	ImageIcon icon6 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap6.PNG");
 
 	public Gimbap() {
-		//íŒ¨ë„ë ˆì´ì•„ì›ƒ
+		//ÆĞ³Î·¹ÀÌ¾Æ¿ô
 		setLayout(null);
-		//Penelìƒ‰ WHITEë¡œ ì§€ì •
+		//Penel»ö WHITE·Î ÁöÁ¤
 		setBackground(Color.WHITE);
-		
-		//ê¹€ë°¥ë©”ë‰´íŒ¨ë„ì‚¬ì´ì¦ˆ
-		//gmp.setLayout(null)ë¡œ í–ˆê¸° ë•Œë¬¸ì— íŒ¨ë„ì— ìŠ¤í¬ë¡¤ ì ìš©ì´ ì•ˆë˜ëŠ” í˜„ìƒì´ ë°œìƒí•œë‹¤.
-		//ê·¸ë˜ì„œ gmpì˜ ì‚¬ì´ì¦ˆë¥¼ gmp.setPreferredSize(new Dimension())ë¥¼ ì‚¬ìš©í•´ì„œ ì§€ì •í•´ì•¼ ìŠ¤í¬ë¡¤ì´ í™”ë©´ì— ë³´ì¸ë‹¤.
+
+		//±è¹ä¸Ş´ºÆĞ³Î»çÀÌÁî
+		//gmp.setLayout(null)·Î Çß±â ¶§¹®¿¡ ÆĞ³Î¿¡ ½ºÅ©·Ñ Àû¿ëÀÌ ¾ÈµÇ´Â Çö»óÀÌ ¹ß»ıÇÑ´Ù.
+		//±×·¡¼­ gmpÀÇ »çÀÌÁî¸¦ gmp.setPreferredSize(new Dimension())¸¦ »ç¿ëÇØ¼­ ÁöÁ¤ÇØ¾ß ½ºÅ©·ÑÀÌ È­¸é¿¡ º¸ÀÎ´Ù.
 		gmp.setLayout(null);
 		gmp.setPreferredSize(new Dimension(0,370));
-		
-		//ì•¼ì±„ê¹€ë°¥ë²„íŠ¼
+
+		//¾ßÃ¤±è¹ä¹öÆ°
 		gbtn1 = new JButton(icon1);
 		gbtn1.setBorderPainted(true);
 		gbtn1.setBounds(35, 20, 100, 100);
-		
-		jl1 = new JLabel("ì•¼ì±„ê¹€ë°¥");
-		jl1_1 = new JLabel("2000ì›");
+
+		jl1 = new JLabel("¾ßÃ¤±è¹ä");
+		jl1_1 = new JLabel("2000¿ø");
 		jl1.setBounds(62, 120, 100, 30);
 		jl1_1.setBounds(67, 140, 100, 30);
-		
-		//ì°¸ì¹˜ê¹€ë°¥ë²„íŠ¼ 
+
+		//ÂüÄ¡±è¹ä¹öÆ° 
 		gbtn2 = new JButton(icon2);
 		gbtn2.setBorderPainted(true);
 		gbtn2.setBounds(185, 20, 100, 100); 
-		
-		jl2 = new JLabel("ì°¸ì¹˜ê¹€ë°¥");
-		jl2_1 = new JLabel("3000ì›");
+
+		jl2 = new JLabel("ÂüÄ¡±è¹ä");
+		jl2_1 = new JLabel("3000¿ø");
 		jl2.setBounds(213, 120, 100, 30);
 		jl2_1.setBounds(217, 140, 100, 30);
-		
-		//ì¹˜ì¦ˆê¹€ë°¥ë²„íŠ¼
+
+		//Ä¡Áî±è¹ä¹öÆ°
 		gbtn3 = new JButton(icon3);
 		gbtn3.setBorderPainted(true);
 		gbtn3.setBounds(335, 20, 100, 100);
-		
-		jl3 = new JLabel("ì¹˜ì¦ˆê¹€ë°¥");
-		jl3_1 = new JLabel("3000ì›");
+
+		jl3 = new JLabel("Ä¡Áî±è¹ä");
+		jl3_1 = new JLabel("3000¿ø");
 		jl3.setBounds(360, 120, 100, 30);
 		jl3_1.setBounds(364, 140, 100, 30);
-		
-		//ê¹€ì¹˜ê¹€ë°¥ë²„íŠ¼
+
+		//±èÄ¡±è¹ä¹öÆ°
 		gbtn4 = new JButton(icon4);
 		gbtn4.setBorderPainted(true);
 		gbtn4.setBounds(35, 180, 100, 100);
-		
-		jl4 = new JLabel("ê¹€ì¹˜ê¹€ë°¥");
-		jl4_1 = new JLabel("3000ì›");
+
+		jl4 = new JLabel("±èÄ¡±è¹ä");
+		jl4_1 = new JLabel("3000¿ø");
 		jl4.setBounds(62, 280, 100, 30);
 		jl4_1.setBounds(66, 300, 100, 30);
-		
-		//ë¶ˆê³ ê¸°ê¹€ë°¥ë²„íŠ¼
+
+		//ºÒ°í±â±è¹ä¹öÆ°
 		gbtn5 = new JButton(icon5);
 		gbtn5.setBorderPainted(true);
 		gbtn5.setBounds(185, 180, 100, 100);
-		
-		jl5 = new JLabel("ë¶ˆê³ ê¸°ê¹€ë°¥");
-		jl5_1 = new JLabel("4000ì›");
+
+		jl5 = new JLabel("ºÒ°í±â±è¹ä");
+		jl5_1 = new JLabel("4000¿ø");
 		jl5.setBounds(207, 280, 100, 30);
 		jl5_1.setBounds(217, 300, 100, 30);
-		
-		//ì™•ìƒˆìš°íŠ€ê¹€ê¹€ë°¥ë²„íŠ¼
+
+		//¿Õ»õ¿ìÆ¢±è±è¹ä¹öÆ°
 		gbtn6 = new JButton(icon6);
 		gbtn6.setBorderPainted(true);
 		gbtn6.setBounds(335, 180, 100, 100);
-		
-		jl6 = new JLabel("ì™•ìƒˆìš°íŠ€ê¹€ê¹€ë°¥");
-		jl6_1 = new JLabel("5000ì›");
+
+		jl6 = new JLabel("¿Õ»õ¿ìÆ¢±è±è¹ä");
+		jl6_1 = new JLabel("5000¿ø");
 		jl6.setBounds(343, 280, 100, 30);
 		jl6_1.setBounds(363, 300, 100, 30);
-		
-		//ê¹€ë°¥ë©”ë‰´íŒ¨ë„ì— ë²„íŠ¼ì¶”ê°€
+
+		//±è¹ä¸Ş´ºÆĞ³Î¿¡ ¹öÆ°Ãß°¡
 		gmp.add(gbtn1);
 		gmp.add(jl1);
 		gmp.add(jl1_1);
-		
+
 		gmp.add(gbtn2);
 		gmp.add(jl2);
 		gmp.add(jl2_1);
-		
+
 		gmp.add(gbtn3);
 		gmp.add(jl3);
 		gmp.add(jl3_1);
-		
+
 		gmp.add(gbtn4);
 		gmp.add(jl4);
 		gmp.add(jl4_1);
-		
+
 		gmp.add(gbtn5);
 		gmp.add(jl5);
 		gmp.add(jl5_1); 
-		
+
 		gmp.add(gbtn6);
 		gmp.add(jl6);
 		gmp.add(jl6_1);
-		
-		//ìŠ¤í¬ë¡¤ì— ê¹€ë°¥ë©”ë‰´íŒ¨ë„ ì¶”ê°€
+
+		//½ºÅ©·Ñ¿¡ ±è¹ä¸Ş´ºÆĞ³Î Ãß°¡
 		gmpsp = new JScrollPane(gmp);
-		//ìŠ¤í¬ë¡¤ì˜ ì‚¬ì´ì¦ˆë¥¼ ì§€ì •
+		//½ºÅ©·ÑÀÇ »çÀÌÁî¸¦ ÁöÁ¤
 		gmpsp.setBounds(0, 100, 485, 350);
-		
-		//ê¹€ë°¥ì „ì²´íŒ¨ë„ì— ìŠ¤í¬ë¡¤ ì¶”ê°€
+
+		//±è¹äÀüÃ¼ÆĞ³Î¿¡ ½ºÅ©·Ñ Ãß°¡
 		add(gmpsp);
 	}	
 }

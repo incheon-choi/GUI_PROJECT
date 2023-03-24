@@ -12,64 +12,64 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
 public class Meal extends JPanel {
-	//mbtn = ì‹ì‚¬ë²„íŠ¼
-	//jl1 = ì‹ì‚¬ì´ë¦„
-	//jl1_1 = ì‹ì‚¬ê°€ê²©
-	//mmpsp = ì‹ì‚¬ë©”ë‰´ìŠ¤í¬ë¡¤
-	//mmp = ê¹€ë°¥ë©”ë‰´íŒ¨ë„
-	
-	//ë©”ë‰´ìŠ¤í¬ë¡¤
+	//mbtn = ½Ä»ç¹öÆ°
+	//jl1 = ½Ä»çÀÌ¸§
+	//jl1_1 = ½Ä»ç°¡°İ
+	//mmpsp = ½Ä»ç¸Ş´º½ºÅ©·Ñ
+	//mmp = ±è¹ä¸Ş´ºÆĞ³Î
+
+	//¸Ş´º½ºÅ©·Ñ
 	private JScrollPane mmpsp;
-	
-	//ë©”ë‰´í˜ë„
+
+	//¸Ş´ºÆä³Î
 	private JPanel mmp = new JPanel();
-	
-	//ê¹€ì¹˜ë³¶ìŒë°¥ë²„íŠ¼ ìƒì„±
+
+	//±èÄ¡ººÀ½¹ä¹öÆ° »ı¼º
 	private JButton mbtn1;
 	private JLabel jl1;
 	private JLabel jl1_1;
-	
-	//í† ë§ˆí† ë‹¬ê±€ë®ë°¥ë²„íŠ¼ ìƒì„±
+
+	//Åä¸¶Åä´Ş°¿µ¤¹ä¹öÆ° »ı¼º
 	private JButton mbtn2;
 	private JLabel jl2;
 	private JLabel jl2_1;
-	
-	//ì˜¤ë¯€ë¼ì´ìŠ¤ë²„íŠ¼ ìƒì„±
+
+	//¿À¹Ç¶óÀÌ½º¹öÆ° »ı¼º
 	private JButton mbtn3;
 	private JLabel jl3;
 	private JLabel jl3_1;
-	
-	//ì œìœ¡ë®ë°¥ë²„íŠ¼ ìƒì„±
+
+	//Á¦À°µ¤¹ä¹öÆ° »ı¼º
 	private JButton mbtn4;
 	private JLabel jl4;
 	private JLabel jl4_1;
-	
-	//ë¶ˆê³ ê¸°ë®ë°¥ë²„íŠ¼ ìƒì„±
+
+	//ºÒ°í±âµ¤¹ä¹öÆ° »ı¼º
 	private JButton mbtn5;
 	private JLabel jl5;
 	private JLabel jl5_1;
-	
-	//ëŒì†¥ë¹„ë¹”ë°¥ë²„íŠ¼ ìƒì„±
+
+	//µ¹¼Üºñºö¹ä¹öÆ° »ı¼º
 	private JButton mbtn6;
 	private JLabel jl6;
 	private JLabel jl6_1;
-	
-	//ëšë°°ê¸°ë¶ˆê³ ê¸°ë²„íŠ¼ ìƒì„±
+
+	//¶Ò¹è±âºÒ°í±â¹öÆ° »ı¼º
 	private JButton mbtn7;
 	private JLabel jl7;
 	private JLabel jl7_1;
-	
-	//í•´ë¬¼ìˆœë‘ë¶€ì°Œê°œë²„íŠ¼ ìƒì„±
+
+	//ÇØ¹°¼øµÎºÎÂî°³¹öÆ° »ı¼º
 	private JButton mbtn8;
 	private JLabel jl8;
 	private JLabel jl8_1;
-	
-	//ë¶€ëŒ€ì°Œê°œë²„íŠ¼ ìƒì„±
+
+	//ºÎ´ëÂî°³¹öÆ° »ı¼º
 	private JButton mbtn9;
 	private JLabel jl9;
 	private JLabel jl9_1;
-	
-	//ê¹€ë°¥ë²„íŠ¼ì´ë¯¸ì§€
+
+	//±è¹ä¹öÆ°ÀÌ¹ÌÁö
 	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal1.PNG");
 	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal2.PNG");
 	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal3.PNG");
@@ -79,150 +79,150 @@ public class Meal extends JPanel {
 	ImageIcon icon7 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal7.PNG");
 	ImageIcon icon8 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal8.PNG");
 	ImageIcon icon9 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal9.PNG");
-	
+
 	public Meal() {
-		//íŒ¨ë„ë ˆì´ì•„ì›ƒ
+		//ÆĞ³Î·¹ÀÌ¾Æ¿ô
 		setLayout(null);
-		//Penelìƒ‰ WHITEë¡œ ì§€ì •
+		//Penel»ö WHITE·Î ÁöÁ¤
 		setBackground(Color.WHITE);
-		
-		//ì‹ì‚¬ë©”ë‰´íŒ¨ë„ì‚¬ì´ì¦ˆ
+
+		//½Ä»ç¸Ş´ºÆĞ³Î»çÀÌÁî
 		mmp.setLayout(null);
 		mmp.setPreferredSize(new Dimension(0,500));
-		
-		//ê¹€ì¹˜ë³¶ìŒë°¥ë²„íŠ¼
+
+		//±èÄ¡ººÀ½¹ä¹öÆ°
 		mbtn1 = new JButton(icon1);
 		mbtn1.setBorderPainted(true);
 		mbtn1.setBounds(35, 20, 100, 100);
-		
-		jl1 = new JLabel("ê¹€ì¹˜ë³¶ìŒë°¥");
-		jl1_1 = new JLabel("6000ì›");
+
+		jl1 = new JLabel("±èÄ¡ººÀ½¹ä");
+		jl1_1 = new JLabel("6000¿ø");
 		jl1.setBounds(56, 120, 100, 30);
 		jl1_1.setBounds(67, 140, 100, 30);
-		
-		//í† ë§ˆí† ë‹¬ê±€ë®ë°¥ë²„íŠ¼ 
+
+		//Åä¸¶Åä´Ş°¿µ¤¹ä¹öÆ° 
 		mbtn2 = new JButton(icon2);
 		mbtn2.setBorderPainted(true);
 		mbtn2.setBounds(185, 20, 100, 100); 
-		
-		jl2 = new JLabel("í† ë§ˆí† ë‹¬ê±€ë®ë°¥");
-		jl2_1 = new JLabel("7000ì›");
+
+		jl2 = new JLabel("Åä¸¶Åä´Ş°¿µ¤¹ä");
+		jl2_1 = new JLabel("7000¿ø");
 		jl2.setBounds(192, 120, 100, 30);
 		jl2_1.setBounds(215, 140, 100, 30);
-		
-		//ì˜¤ë¯€ë¼ì´ìŠ¤ë²„íŠ¼
+
+		//¿À¹Ç¶óÀÌ½º¹öÆ°
 		mbtn3 = new JButton(icon3);
 		mbtn3.setBorderPainted(true);
 		mbtn3.setBounds(335, 20, 100, 100);
-		
-		jl3 = new JLabel("ì˜¤ë¯€ë¼ì´ìŠ¤");
-		jl3_1 = new JLabel("6000ì›");
+
+		jl3 = new JLabel("¿À¹Ç¶óÀÌ½º");
+		jl3_1 = new JLabel("6000¿ø");
 		jl3.setBounds(355, 120, 100, 30);
 		jl3_1.setBounds(364, 140, 100, 30);
-		
-		//ì œìœ¡ë®ë°¥ë²„íŠ¼
+
+		//Á¦À°µ¤¹ä¹öÆ°
 		mbtn4 = new JButton(icon4);
 		mbtn4.setBorderPainted(true);
 		mbtn4.setBounds(35, 180, 100, 100);
-		
-		jl4 = new JLabel("ì œìœ¡ë®ë°¥");
-		jl4_1 = new JLabel("6000ì›");
+
+		jl4 = new JLabel("Á¦À°µ¤¹ä");
+		jl4_1 = new JLabel("6000¿ø");
 		jl4.setBounds(62, 280, 100, 30);
 		jl4_1.setBounds(67, 300, 100, 30);
-		
-		//ë¶ˆê³ ê¸°ë®ë°¥ë²„íŠ¼
+
+		//ºÒ°í±âµ¤¹ä¹öÆ°
 		mbtn5 = new JButton(icon5);
 		mbtn5.setBorderPainted(true);
 		mbtn5.setBounds(185, 180, 100, 100);
-		
-		jl5 = new JLabel("ë¶ˆê³ ê¸°ë®ë°¥");
-		jl5_1 = new JLabel("6000ì›");
+
+		jl5 = new JLabel("ºÒ°í±âµ¤¹ä");
+		jl5_1 = new JLabel("6000¿ø");
 		jl5.setBounds(205, 280, 100, 30);
 		jl5_1.setBounds(217, 300, 100, 30);
-		
-		//ëŒì†¥ë¹„ë¹”ë°¥ë²„íŠ¼
+
+		//µ¹¼Üºñºö¹ä¹öÆ°
 		mbtn6 = new JButton(icon6);
 		mbtn6.setBorderPainted(true);
 		mbtn6.setBounds(335, 180, 100, 100);
-		
-		jl6 = new JLabel("ëŒì†¥ë¹„ë¹”ë°¥");
-		jl6_1 = new JLabel("6500ì›");
+
+		jl6 = new JLabel("µ¹¼Üºñºö¹ä");
+		jl6_1 = new JLabel("6500¿ø");
 		jl6.setBounds(357, 280, 100, 30);
 		jl6_1.setBounds(366, 300, 100, 30);
-		
-		//ëšë°°ê¸°ë¶ˆê³ ê¸°ë²„íŠ¼
+
+		//¶Ò¹è±âºÒ°í±â¹öÆ°
 		mbtn7 = new JButton(icon7);
 		mbtn7.setBorderPainted(true);
 		mbtn7.setBounds(35, 340, 100, 100);
-		
-		jl7 = new JLabel("ëšë°°ê¸°ë¶ˆê³ ê¸°");
-		jl7_1 = new JLabel("6500ì›");
+
+		jl7 = new JLabel("¶Ò¹è±âºÒ°í±â");
+		jl7_1 = new JLabel("6500¿ø");
 		jl7.setBounds(50, 440, 100, 30);
 		jl7_1.setBounds(67, 460, 100, 30);
-		
-		//í•´ë¬¼ìˆœë‘ë¶€ì°Œê°œë²„íŠ¼
+
+		//ÇØ¹°¼øµÎºÎÂî°³¹öÆ°
 		mbtn8 = new JButton(icon8);
 		mbtn8.setBorderPainted(true);
 		mbtn8.setBounds(185, 340, 100, 100);
-		
-		jl8 = new JLabel("í•´ë¬¼ìˆœë‘ë¶€ì°Œê°œ");
-		jl8_1 = new JLabel("7000ì›");
+
+		jl8 = new JLabel("ÇØ¹°¼øµÎºÎÂî°³");
+		jl8_1 = new JLabel("7000¿ø");
 		jl8.setBounds(193, 440, 100, 30);
 		jl8_1.setBounds(217, 460, 100, 30);
-		
-		//ë¶€ëŒ€ì°Œê°œë²„íŠ¼
+
+		//ºÎ´ëÂî°³¹öÆ°
 		mbtn9 = new JButton(icon9);
 		mbtn9.setBorderPainted(true);
 		mbtn9.setBounds(335, 340, 100, 100);
-		
-		jl9 = new JLabel("ë¶€ëŒ€ì°Œê°œ");
-		jl9_1 = new JLabel("7000ì›");
+
+		jl9 = new JLabel("ºÎ´ëÂî°³");
+		jl9_1 = new JLabel("7000¿ø");
 		jl9.setBounds(363, 440, 100, 30);
 		jl9_1.setBounds(367, 460, 100, 30);
-		
-		//ì‹ì‚¬ë©”ë‰´íŒ¨ë„ì— ë²„íŠ¼ì¶”ê°€
+
+		//½Ä»ç¸Ş´ºÆĞ³Î¿¡ ¹öÆ°Ãß°¡
 		mmp.add(mbtn1);
 		mmp.add(jl1);
 		mmp.add(jl1_1);
-		
+
 		mmp.add(mbtn2);
 		mmp.add(jl2);
 		mmp.add(jl2_1);
-		
+
 		mmp.add(mbtn3);
 		mmp.add(jl3);
 		mmp.add(jl3_1);
-		
+
 		mmp.add(mbtn4);
 		mmp.add(jl4);
 		mmp.add(jl4_1);
-		
+
 		mmp.add(mbtn5);
 		mmp.add(jl5);
 		mmp.add(jl5_1); 
-		
+
 		mmp.add(mbtn6);
 		mmp.add(jl6);
 		mmp.add(jl6_1);
-		
+
 		mmp.add(mbtn7);
 		mmp.add(jl7);
 		mmp.add(jl7_1);
-		
+
 		mmp.add(mbtn8);
 		mmp.add(jl8);
 		mmp.add(jl8_1);
-		
+
 		mmp.add(mbtn9);
 		mmp.add(jl9);
 		mmp.add(jl9_1);
-		
-		//ìŠ¤í¬ë¡¤ì— ê¹€ë°¥ë©”ë‰´íŒ¨ë„ ì¶”ê°€
+
+		//½ºÅ©·Ñ¿¡ ±è¹ä¸Ş´ºÆĞ³Î Ãß°¡
 		mmpsp = new JScrollPane(mmp);
-		//ìŠ¤í¬ë¡¤ì˜ ì‚¬ì´ì¦ˆë¥¼ ì§€ì •
+		//½ºÅ©·ÑÀÇ »çÀÌÁî¸¦ ÁöÁ¤
 		mmpsp.setBounds(0, 100, 485, 350);
-		
-		//ê¹€ë°¥ì „ì²´íŒ¨ë„ì— ìŠ¤í¬ë¡¤ ì¶”ê°€
+
+		//±è¹äÀüÃ¼ÆĞ³Î¿¡ ½ºÅ©·Ñ Ãß°¡
 		add(mmpsp);
 	}
 }
