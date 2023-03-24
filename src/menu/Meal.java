@@ -3,6 +3,8 @@ package menu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,6 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
+import menu.MenuList;
+
+
 public class Meal extends JPanel {
 	//mbtn = 식사버튼
 	//jl1 = 식사이름
@@ -18,10 +23,13 @@ public class Meal extends JPanel {
 	//mmpsp = 식사메뉴스크롤
 	//mmp = 김밥메뉴패널
 	
-	//메뉴스크롤
+	//식사메뉴버튼 생성
+	private JButton mealbtn;
+	
+	//메뉴패널스크롤 생성
 	private JScrollPane mmpsp;
 	
-	//메뉴페널
+	//메뉴패널 생성
 	private JPanel mmp = new JPanel();
 	
 	//김치볶음밥버튼 생성
@@ -70,21 +78,27 @@ public class Meal extends JPanel {
 	private JLabel jl9_1;
 	
 	//김밥버튼이미지
-	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal1.PNG");
-	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal2.PNG");
-	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal3.PNG");
-	ImageIcon icon4 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal4.PNG");
-	ImageIcon icon5 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal5.PNG");
-	ImageIcon icon6 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal6.PNG");
-	ImageIcon icon7 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal7.PNG");
-	ImageIcon icon8 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal8.PNG");
-	ImageIcon icon9 = new ImageIcon("D:\\web_cdy\\java_project\\java\\Meal9.PNG");
-	
+	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal1.PNG");
+	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal2.PNG");
+	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal3.PNG");
+	ImageIcon icon4 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal4.PNG");
+	ImageIcon icon5 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal5.PNG");
+	ImageIcon icon6 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal6.PNG");
+	ImageIcon icon7 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal7.PNG");
+	ImageIcon icon8 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal8.PNG");
+	ImageIcon icon9 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\Meal9.PNG");
+
 	public Meal() {
+
+		
 		//패널레이아웃
 		setLayout(null);
 		//Penel색 WHITE로 지정
 		setBackground(Color.WHITE);
+		
+		//김밥메뉴버튼(버튼을 누르면 해당 패널이 나타나도록 기능추가예정)
+		mealbtn = new JButton("식    사");
+		mealbtn.setBounds(110, 60, 100, 40);
 		
 		//식사메뉴패널사이즈
 		mmp.setLayout(null);
@@ -216,6 +230,9 @@ public class Meal extends JPanel {
 		mmp.add(mbtn9);
 		mmp.add(jl9);
 		mmp.add(jl9_1);
+		
+		//김밥메뉴버튼 추가
+		add(mealbtn);
 		
 		//스크롤에 김밥메뉴패널 추가
 		mmpsp = new JScrollPane(mmp);

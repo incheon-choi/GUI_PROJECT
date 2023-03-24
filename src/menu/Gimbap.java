@@ -2,14 +2,12 @@ package menu;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.ScrollPaneConstants;
 
 public class Gimbap extends JPanel {
 	//gbtn = 김밥버튼
@@ -18,10 +16,10 @@ public class Gimbap extends JPanel {
 	//gmpsp = 김밥메뉴스크롤
 	//gmp = 김밥메뉴패널
 	
-	//메뉴스크롤
+	//메뉴패널스크롤 생성
 	private JScrollPane gmpsp;
-	
-	//메뉴페널
+	 
+	//메뉴패널 생성
 	private JPanel gmp = new JPanel();
 	
 	//야채김밥버튼 생성
@@ -55,18 +53,21 @@ public class Gimbap extends JPanel {
 	private JLabel jl6_1;
 	
 	//김밥버튼이미지
-	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap1.PNG");
-	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap2.PNG");
-	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap3.PNG");
-	ImageIcon icon4 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap4.PNG");
-	ImageIcon icon5 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap5.PNG");
-	ImageIcon icon6 = new ImageIcon("D:\\web_cdy\\java_project\\java\\gimbap6.PNG");
-
+	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap1.PNG");
+	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap2.PNG");
+	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap3.PNG");
+	ImageIcon icon4 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap4.PNG");
+	ImageIcon icon5 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap5.PNG");
+	ImageIcon icon6 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap6.PNG");
+	
+		
 	public Gimbap() {
+		
 		//패널레이아웃
 		setLayout(null);
 		//Penel색 WHITE로 지정
-		setBackground(Color.WHITE);
+		//setBackground(Color.black);
+		
 		
 		//김밥메뉴패널사이즈
 		//gmp.setLayout(null)로 했기 때문에 패널에 스크롤 적용이 안되는 현상이 발생한다.
@@ -163,6 +164,7 @@ public class Gimbap extends JPanel {
 		gmpsp = new JScrollPane(gmp);
 		//스크롤의 사이즈를 지정
 		gmpsp.setBounds(0, 100, 485, 350);
+		
 		
 		//김밥전체패널에 스크롤 추가
 		add(gmpsp);
