@@ -1,39 +1,35 @@
 package menu;
 
-import java.awt.Color;
-
-import javax.swing.JFrame;
+import menu.Gimbap;
+import menu.MenuButton;
+import menu.MenuTest;
 
 public class MenuMain {
 	public static void main(String[] args) {
+		MenuTest mt = new MenuTest();
+		mt.setLayout(null);
 		
-		JFrame f = new JFrame("떡볶이 가게");
-		f.setLayout(null);
+		mt.setTitle("분식집");
 		
-		MenuButton mb = new MenuButton();
-		f.add(mb);
-		
-		Gimbap gimbapPanel = new Gimbap();
-		Noodle noodlePanle = new Noodle();
-		Meal mealPanle = new Meal();
-		Drink drinkPanle = new Drink();
-		
-		gimbapPanel.setBounds(0, 0, 500, 700);
-		//noodlePanle.setBounds(0, 0, 500, 700);
-		//mealPanle.setBounds(0, 0, 500, 700);
-		//drinkPanle.setBounds(0, 0, 500, 700);
-		//gimbapPanel.setBackground(Color.black);
-		
-	
-		f.add(gimbapPanel);
-		f.add(noodlePanle);
-		f.add(mealPanle);
-		f.add(drinkPanle);
+		mt.fmPanel = new FirstMain(mt);
+		mt.mbPanel = new MenuButton(mt);
+		mt.gimbapPanel = new Gimbap(mt);
+		mt.noodlePanel = new Noodle(mt);
+		mt.mealPanel = new Meal(mt);
+		mt.drinkPanel = new Drink(mt);
 		
 		
+		mt.add(mt.fmPanel);
 		
-		f.setBounds(0, 0, 500, 700);
-		f.setVisible(true);
-		f.setDefaultCloseOperation(f.EXIT_ON_CLOSE);
+		mt.add(mt.mbPanel);
+		mt.add(mt.gimbapPanel);
+		mt.add(mt.noodlePanel);
+		mt.add(mt.mealPanel);
+		mt.add(mt.drinkPanel);
+		
+		mt.setBounds(0, 0, 500, 700);
+		mt.setVisible(true);
+		mt.setDefaultCloseOperation(mt.EXIT_ON_CLOSE);
+
 	}
 }

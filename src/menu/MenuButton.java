@@ -1,9 +1,15 @@
 package menu;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+import menu.MenuTest;
+
 
 public class MenuButton extends JPanel {
 	
@@ -11,12 +17,15 @@ public class MenuButton extends JPanel {
 	private JButton noodleBtn;
 	private JButton mealBtn;
 	private JButton drinkBtn;
+	private MenuTest mt;
 	
 	public MenuButton(MenuTest mt) {
 		
+		this.mt = mt;
+		
 		setLayout(null);
 		setBounds(0, 60, 500, 40);
-		//setBackground(Color.YELLOW);
+		setBackground(Color.WHITE);
 		
 		gimbapBtn = new JButton("김    밥");
 		noodleBtn = new JButton("면    류");
@@ -32,5 +41,38 @@ public class MenuButton extends JPanel {
 		add(noodleBtn);
 		add(mealBtn);
 		add(drinkBtn);
+
+		
+		gimbapBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("gimbap");
+			}
+		});
+		
+		noodleBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("noodle");
+			}
+		});
+		
+		mealBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("meal");
+			}
+		});
+		
+		drinkBtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("drink");
+			}
+		});
 	}
 }

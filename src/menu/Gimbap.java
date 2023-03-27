@@ -1,172 +1,178 @@
 package menu;
 
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class Gimbap extends JPanel {
-	//gbtn = 김밥버튼
-	//jl1 = 김밥이름
-	//jl1_1 = 김밥가격
-	//gmpsp = 김밥메뉴스크롤
-	//gmp = 김밥메뉴패널
-	
-	//메뉴패널스크롤 생성
-	private JScrollPane gmpsp;
-	 
-	//메뉴패널 생성
-	private JPanel gmp = new JPanel();
-	
-	//야채김밥버튼 생성
-	private JButton gbtn1;
-	private JLabel jl1;
-	private JLabel jl1_1;
-	
-	//참치김밥버튼 생성
-	private JButton gbtn2;
-	private JLabel jl2;
-	private JLabel jl2_1;
-	
-	//치즈김밥버튼 생성
-	private JButton gbtn3;
-	private JLabel jl3;
-	private JLabel jl3_1;
-	
-	//김치김밥버튼 생성
-	private JButton gbtn4;
-	private JLabel jl4;
-	private JLabel jl4_1;
-	
-	//불고기김밥버튼 생성
-	private JButton gbtn5;
-	private JLabel jl5;
-	private JLabel jl5_1;
-	
-	//왕새우튀김김밥버튼 생성
-	private JButton gbtn6;
-	private JLabel jl6;
-	private JLabel jl6_1;
-	
-	//김밥버튼이미지
-	ImageIcon icon1 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap1.PNG");
-	ImageIcon icon2 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap2.PNG");
-	ImageIcon icon3 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap3.PNG");
-	ImageIcon icon4 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap4.PNG");
-	ImageIcon icon5 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap5.PNG");
-	ImageIcon icon6 = new ImageIcon("D:\\web_cdy\\java_project\\java\\work\\Java_Project\\src\\image\\gimbap6.PNG");
+	private int count1;
+	private int count2;
+	private int count3;
+	private int count4;
+	private int count5;
+	private int count6;
+	private JButton before;
+	private JButton pay;
+	private JButton reset;
+	private MenuTest mt;
 	
 		
-	public Gimbap() {
+	public Gimbap(MenuTest mt) {
+		this.mt = mt;
 		
-		//패널레이아웃
+		//패널의 총 위치,크기
+		setBounds(0,0,500,700);
+		
+		//패널의 레이아웃
 		setLayout(null);
-		//Penel색 WHITE로 지정
-		//setBackground(Color.black);
+		
+		//패널의 배경색
+		setBackground(new Color(255,255,215));
 		
 		
-		//김밥메뉴패널사이즈
-		//gmp.setLayout(null)로 했기 때문에 패널에 스크롤 적용이 안되는 현상이 발생한다.
-		//그래서 gmp의 사이즈를 gmp.setPreferredSize(new Dimension())를 사용해서 지정해야 스크롤이 화면에 보인다.
-		gmp.setLayout(null);
-		gmp.setPreferredSize(new Dimension(0,370));
+		//패널 배열 설정 부분
+		String[] menu = {"야채김밥","참치김밥","치즈김밥","김치김밥","불고기김밥","왕새우튀김김밥"};
+		int[] price = {2000,3000,3000,3000,4000,5000};
+		JButton[] bt = new JButton[menu.length];
+		JLabel[] namel = new JLabel[menu.length];
+		JLabel[] pricel = new JLabel[menu.length];
+		ImageIcon[] icon = new ImageIcon[menu.length];
 		
-		//야채김밥버튼
-		gbtn1 = new JButton(icon1);
-		gbtn1.setBorderPainted(true);
-		gbtn1.setBounds(35, 20, 100, 100);
+		for(int i=0; i<menu.length; i++) {
+			
+			//김밥 버튼
+			bt[i] = new JButton(menu[i]);
+			if(i<3) {
+				bt[i].setBounds(37+i*150, 110, 100, 100);
+			}else {
+				bt[i].setBounds(37+(i-3)*150, 290, 100, 100);
+			}
+			//김밥버튼에 이미지 삽입
+			//icon[i] = new ImageIcon(i+"")
+			//bt[i].setIcon(icon[i]);
+			
+			//이름
+			namel[i] = new JLabel(menu[i]);
+			if(i<3) {
+				namel[i].setBounds(bt[i].getX()+30, bt[i].getY()+100, 100, 30);
+			} else if(i == 3){
+				namel[i].setBounds(bt[i].getX()+30, bt[i].getY()+100, 100, 30);
+			} else if(i == 4){
+				namel[i].setBounds(bt[i].getX()+23, bt[i].getY()+100, 100, 30);
+			} else if(i == 5){
+				namel[i].setBounds(bt[i].getX()+13, bt[i].getY()+100, 100, 30);
+			} 
+			
+			//가격
+			pricel[i] = new JLabel(price[i] + "원");
+			if(i<3) {
+				pricel[i].setBounds(bt[i].getX()+30, bt[i].getY()+120, 100, 30);
+			}else {
+				pricel[i].setBounds(bt[i].getX()+30, bt[i].getY()+120, 100, 30);
+			}
+			
+			//패널에 버튼 추가
+			add(bt[i]);
+			add(namel[i]);
+			add(pricel[i]);	
+			
+		}//for문	
 		
-		jl1 = new JLabel("야채김밥");
-		jl1_1 = new JLabel("2000원");
-		jl1.setBounds(62, 120, 100, 30);
-		jl1_1.setBounds(67, 140, 100, 30);
-		
-		//참치김밥버튼 
-		gbtn2 = new JButton(icon2);
-		gbtn2.setBorderPainted(true);
-		gbtn2.setBounds(185, 20, 100, 100); 
-		
-		jl2 = new JLabel("참치김밥");
-		jl2_1 = new JLabel("3000원");
-		jl2.setBounds(213, 120, 100, 30);
-		jl2_1.setBounds(217, 140, 100, 30);
-		
-		//치즈김밥버튼
-		gbtn3 = new JButton(icon3);
-		gbtn3.setBorderPainted(true);
-		gbtn3.setBounds(335, 20, 100, 100);
-		
-		jl3 = new JLabel("치즈김밥");
-		jl3_1 = new JLabel("3000원");
-		jl3.setBounds(360, 120, 100, 30);
-		jl3_1.setBounds(364, 140, 100, 30);
-		
-		//김치김밥버튼
-		gbtn4 = new JButton(icon4);
-		gbtn4.setBorderPainted(true);
-		gbtn4.setBounds(35, 180, 100, 100);
-		
-		jl4 = new JLabel("김치김밥");
-		jl4_1 = new JLabel("3000원");
-		jl4.setBounds(62, 280, 100, 30);
-		jl4_1.setBounds(66, 300, 100, 30);
-		
-		//불고기김밥버튼
-		gbtn5 = new JButton(icon5);
-		gbtn5.setBorderPainted(true);
-		gbtn5.setBounds(185, 180, 100, 100);
-		
-		jl5 = new JLabel("불고기김밥");
-		jl5_1 = new JLabel("4000원");
-		jl5.setBounds(207, 280, 100, 30);
-		jl5_1.setBounds(217, 300, 100, 30);
-		
-		//왕새우튀김김밥버튼
-		gbtn6 = new JButton(icon6);
-		gbtn6.setBorderPainted(true);
-		gbtn6.setBounds(335, 180, 100, 100);
-		
-		jl6 = new JLabel("왕새우튀김김밥");
-		jl6_1 = new JLabel("5000원");
-		jl6.setBounds(343, 280, 100, 30);
-		jl6_1.setBounds(363, 300, 100, 30);
-		
-		//김밥메뉴패널에 버튼추가
-		gmp.add(gbtn1);
-		gmp.add(jl1);
-		gmp.add(jl1_1);
-		
-		gmp.add(gbtn2);
-		gmp.add(jl2);
-		gmp.add(jl2_1);
-		
-		gmp.add(gbtn3);
-		gmp.add(jl3);
-		gmp.add(jl3_1);
-		
-		gmp.add(gbtn4);
-		gmp.add(jl4);
-		gmp.add(jl4_1);
-		
-		gmp.add(gbtn5);
-		gmp.add(jl5);
-		gmp.add(jl5_1); 
-		
-		gmp.add(gbtn6);
-		gmp.add(jl6);
-		gmp.add(jl6_1);
-		
-		//스크롤에 김밥메뉴패널 추가
-		gmpsp = new JScrollPane(gmp);
-		//스크롤의 사이즈를 지정
-		gmpsp.setBounds(0, 100, 485, 350);
+		//메뉴주문리스트
+		JTextArea ta = new JTextArea(20,20);
+		ta.setBounds(0, 450, 500, 150);
+		ta.setText("   상품명     수량     합계\n");
+		ta.setBackground(Color.WHITE);
+		ta.setEditable(false);
 		
 		
-		//김밥전체패널에 스크롤 추가
-		add(gmpsp);
+		//버튼 누르면 상품명, 단가, 수량 증가
+		for(int i=0; i<menu.length; i++) {
+			int j = i;
+			
+			count1=0;
+			count2=0;
+			count3=0;
+			count4=0;
+			count5=0;
+			count6=0;
+			bt[i].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					if(menu[j].equals("야채김밥")) {
+						count1 += 1;
+						ta.append("  "+menu[j]+"    "+count1+"    "+price[j]*count1+"\n");
+					} else if(menu[j].equals("참치김밥")) {
+						count2 += 1; 
+						ta.append("  "+menu[j]+"    "+count2+"    "+price[j]*count2+"\n");
+					} else if(menu[j].equals("치즈김밥")) {
+						count3 += 1;
+						ta.append("  "+menu[j]+"    "+count3+"    "+price[j]*count3+"\n");
+					} else if(menu[j].equals("김치김밥")) {
+						count4 += 1;
+						ta.append("  "+menu[j]+"    "+count4+"    "+price[j]*count4+"\n");
+					} else if(menu[j].equals("불고기김밥")) {
+						count5 += 1;
+						ta.append("  "+menu[j]+"    "+count5+"    "+price[j]*count5+"\n");
+					} else if(menu[j].equals("왕새우튀김김밥")) {
+						count6 += 1;
+						ta.append("  "+menu[j]+"    "+count6+"    "+price[j]*count6+"\n");
+					}
+				}
+			});
+		}
+		
+		//패널에 메뉴주문리스트 추가
+		add(ta);
+
+		
+		//이전,결제,초기화버튼 위치,크기 지정
+		before = new JButton("이   전");
+		pay = new JButton("확   인");
+		reset = new JButton("초 기 화");
+		reset.setBounds(202, 610, 95, 40);
+		before.setBounds(100, 610, 100, 40);
+		pay.setBounds(300, 610, 100, 40);
+		
+		//패널에 이전,결제,초기화버튼 추가
+		add(before);
+		add(pay);
+		add(reset);
+		
+		//이전버튼 누르면 맨 처음 프레임으로 돌아가는 기능
+		before.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("before");
+			}
+		});
+		//결제버튼 누르면 결제창으로 넘어가는 기능
+		pay.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("pay");
+			}
+		});
+		
+		//초기화버튼 누르면 주문리스트 리셋
+		reset.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ta.setText("   상품명     수량     합계\n");
+				
+			}
+		});
 	}	
 }

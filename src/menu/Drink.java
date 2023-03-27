@@ -1,129 +1,177 @@
 package menu;
 
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class Drink extends JPanel {
-	ImageIcon img1 = new ImageIcon("D:\\JAVA19_RBW\\eclipse-workspace\\TeamProject\\TeamProject\\src\\image\\drink1.PNG");
-	ImageIcon img2 = new ImageIcon("D:\\JAVA19_RBW\\eclipse-workspace\\TeamProject\\TeamProject\\src\\image\\drink2.PNG");
-	ImageIcon img3 = new ImageIcon("D:\\JAVA19_RBW\\eclipse-workspace\\TeamProject\\TeamProject\\src\\image\\drink3.PNG");
-	ImageIcon img4 = new ImageIcon("D:\\JAVA19_RBW\\eclipse-workspace\\TeamProject\\TeamProject\\src\\image\\drink4.PNG");
-	ImageIcon img5 = new ImageIcon("D:\\JAVA19_RBW\\eclipse-workspace\\TeamProject\\TeamProject\\src\\image\\drink5.PNG");
-	ImageIcon img6 = new ImageIcon("D:\\JAVA19_RBW\\eclipse-workspace\\TeamProject\\TeamProject\\src\\image\\drink6.PNG");
+	private int count1;
+	private int count2;
+	private int count3;
+	private int count4;
+	private int count5;
+	private int count6;
+	private int count= 0;
+	private JButton reset;
+	private JButton before;
+	private JButton pay;
+	private MenuTest mt;
 	
-		//코카콜라
-		private JButton btn1;
-		private JLabel jl1;
-		private JLabel jl1_1;
-		//코카콜라제로
-		private JButton btn2;
-		private JLabel jl2;
-		private JLabel jl2_1;
-		//스프라이트
-		private JButton btn3;
-		private JLabel jl3;
-		private JLabel jl3_1;
-		//환타(오렌지)
-		private JButton btn4;
-		private JLabel jl4;
-		private JLabel jl4_1;
-		//환타(포도)
-		private JButton btn5;
-		private JLabel jl5;
-		private JLabel jl5_1;
-		//닥터페퍼
-		private JButton btn6;
-		private JLabel jl6;
-		private JLabel jl6_1;
-	
-	private JScrollPane scroll;
-	private JPanel gmp = new JPanel();
-	
-	public Drink() {
-		gmp.setLayout(null);
-		gmp.setPreferredSize(new Dimension(0,370));
+	public Drink(MenuTest mt) {
+		this.mt = mt;
+		
+		//패널의 총 위치,크기
+		setBounds(0,0,500,700);
+		
+		//패널의 레이아웃
 		setLayout(null);
-
-		btn1 = new JButton(img1);
-		btn1.setBounds(35, 20, 100, 100);
-		jl1 = new JLabel("코카콜라");
-		jl1.setBounds(60, 120, 100, 30);
-		jl1_1 = new JLabel("1500원");
-		jl1_1.setBounds(65, 140, 100, 30);
+		
+		//패널의 배경색
+		setBackground(new Color(255,255,215));
 		
 		
-		btn2 = new JButton(img2);
-		btn2.setBounds(185, 20, 100, 100);
-		jl2 = new JLabel("코카콜라제로");
-		jl2.setBounds(200, 120, 100, 30);
-		jl2_1 = new JLabel("1500원");
-		jl2_1.setBounds(215, 140, 100, 30);
-	
+		//패널 배열 설정 부분
+		String[] menu = {"코카콜라","코카콜라(제로)","스프라이트","환타(오렌지)","환타(포도)","닥터페퍼"};
+		int[] price = {1500,1500,1500,1500,1500,1500};
+		JButton[] bt = new JButton[menu.length];
+		JLabel[] namel = new JLabel[menu.length];
+		JLabel[] pricel = new JLabel[menu.length];
+		ImageIcon[] icon = new ImageIcon[menu.length];
 		
-		btn3 = new JButton(img3);
-		btn3.setBounds(335, 20, 100, 100);
-		jl3 = new JLabel("스프라이트");
-		jl3.setBounds(355, 120, 100, 30);
-		jl3_1 = new JLabel("1500원");
-		jl3_1.setBounds(365, 140, 100, 30);
+		for(int i=0; i<menu.length; i++) {
+			
+			//음료 버튼
+			bt[i] = new JButton(menu[i]);
+			if(i<3) {
+				bt[i].setBounds(37+i*150, 110, 100, 100);
+			}else {
+				bt[i].setBounds(37+(i-3)*150, 290, 100, 100);
+			}
+			//음료버튼에 이미지 삽입
+			//icon[i] = new ImageIcon(i+"")
+			//bt[i].setIcon(icon[i]);
+			
+			//이름
+			namel[i] = new JLabel(menu[i]);
+			if(i==0||i==4||i==5) {
+				namel[i].setBounds(bt[i].getX()+30, bt[i].getY()+100, 100, 30);
+			} else if(i==1){
+				namel[i].setBounds(bt[i].getX()+20, bt[i].getY()+100, 100, 30);
+			} else if(i==2){
+				namel[i].setBounds(bt[i].getX()+22, bt[i].getY()+100, 100, 30);
+			} else if(i==3){
+				namel[i].setBounds(bt[i].getX()+16, bt[i].getY()+100, 100, 30);
+			} 
+			
+			//가격
+			pricel[i] = new JLabel(price[i] + "원");
+			if(i<3) {
+				pricel[i].setBounds(bt[i].getX()+30, bt[i].getY()+120, 100, 30);
+			}else {
+				pricel[i].setBounds(bt[i].getX()+30, bt[i].getY()+120, 100, 30);
+			}
+			
+			//패널에 버튼 추가
+			add(bt[i]);
+			add(namel[i]);
+			add(pricel[i]);	
+			
+		}//for문	
 		
-		
-		btn4 = new JButton(img4);
-		btn4.setBounds(35, 180, 100, 100);
-		jl4 = new JLabel("환타(오렌지)");
-		jl4.setBounds(55, 280, 280, 30);
-		jl4_1 = new JLabel("1500원");
-		jl4_1.setBounds(65, 300, 100, 30);
-		
-		
-		btn5 = new JButton(img5);
-		btn5.setBounds(185, 180, 100, 100);
-		jl5 = new JLabel("환타(포도)");
-		jl5.setBounds(205, 280, 100, 30);
-		jl5_1 = new JLabel("1500원");
-		jl5_1.setBounds(215, 300, 100, 30);
-		
-		
-		btn6 = new JButton(img6);
-		btn6.setBounds(335, 180, 100, 100);
-		jl6 = new JLabel("닥터페퍼");
-		jl6.setBounds(357, 280, 100, 30);
-		jl6_1 = new JLabel("1500");
-		jl6_1.setBounds(365, 300, 100, 30);
-	
-		scroll = new JScrollPane(gmp);
-		
-		//버튼
-		gmp.add(btn1);
-		gmp.add(btn2);
-		gmp.add(btn3);
-		gmp.add(btn4);
-		gmp.add(btn5);
-		gmp.add(btn6);
-		//상품이름
-		gmp.add(jl1);
-		gmp.add(jl2);
-		gmp.add(jl3);
-		gmp.add(jl4);
-		gmp.add(jl5);
-		gmp.add(jl6);
-		//가격
-		gmp.add(jl1_1);
-		gmp.add(jl2_1);
-		gmp.add(jl3_1);
-		gmp.add(jl4_1);
-		gmp.add(jl5_1);
-		gmp.add(jl6_1);
+		//메뉴주문리스트
+		JTextArea ta = new JTextArea(20,20);
+		ta.setBounds(0, 450, 500, 150);
+		ta.setText("   상품명     수량     합계\n");
+		ta.setBackground(Color.WHITE);
+		ta.setEditable(false);
 		
 		
+		//버튼 누르면 상품명, 단가, 수량 증가
+		for(int i=0; i<menu.length; i++) {
+			int j = i;
+			
+			count1=0;
+			count2=0;
+			count3=0;
+			count4=0;
+			count5=0;
+			count6=0;
+			bt[i].addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					String str;
+					if(menu[j].equals("코카콜라")) {
+						count1 += 1;
+						ta.append("  "+menu[j]+"    "+count1+"    "+price[j]*count1+"\n");
+					} else if(menu[j].equals("코카콜라(제로)")) {
+						count2 += 1; 
+						ta.append("  "+menu[j]+"    "+count2+"    "+price[j]*count2+"\n");
+					} else if(menu[j].equals("스프라이트")) {
+						count3 += 1;
+						ta.append("  "+menu[j]+"    "+count3+"    "+price[j]*count3+"\n");
+					} else if(menu[j].equals("환타(오렌지)")) {
+						count4 += 1;
+						ta.append("  "+menu[j]+"    "+count4+"    "+price[j]*count4+"\n");
+					} else if(menu[j].equals("환타(포도)")) {
+						count5 += 1;
+						ta.append("  "+menu[j]+"    "+count5+"    "+price[j]*count5+"\n");
+					} else if(menu[j].equals("닥터페퍼")) {
+						count6 += 1;
+						ta.append("  "+menu[j]+"    "+count6+"    "+price[j]*count6+"\n");
+					}
+				}
+			});
+		}
+				
+		//패널에 메뉴주문리스트 추가
+		add(ta);
 		
-		scroll.setBounds(0, 100, 485, 350);
-		add(scroll);
+		//이전,결제,초기화버튼 위치,크기 지정
+		before = new JButton("이   전");
+		pay = new JButton("확   인");
+		reset = new JButton("초 기 화");
+		reset.setBounds(202, 610, 95, 40);
+		before.setBounds(100, 610, 100, 40);
+		pay.setBounds(300, 610, 100, 40);
+		
+		//패널에 이전,결제,초기화버튼 추가
+		add(before);
+		add(pay);
+		add(reset);
+		
+		//이전버튼 누르면 맨 처음 프레임으로 돌아가는 기능
+		before.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("before");
+			}
+		});
+		//결제버튼 누르면 결제창으로 넘어가는 기능
+		pay.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mt.change("pay");
+			}
+		});
+		
+		//초기화버튼 누르면 주문리스트 리셋
+		reset.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ta.setText("   상품명     수량     합계\n");
+				
+			}
+		});
 	}
 }
